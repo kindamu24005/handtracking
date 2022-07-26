@@ -50,8 +50,8 @@ class handDetector():
                 
                 lmList.append([id, cx, cy])
 
-                if draw:
-                    cv2.circle(img, (cx, cy), 25, (255, 0, 255), cv2.FILLED)
+                # if draw:
+                #     cv2.circle(img, (cx, cy), 25, (255, 0, 255), cv2.FILLED)
 
         
         return lmList
@@ -80,14 +80,14 @@ def main():
         if len(lmList) != 0:
             print(lmList[4])
 
-        # FPSの計算
-        cTime = time.time()
-        fps = 1/(cTime - pTime)
-        pTime = cTime
+        # # FPSの計算
+        # cTime = time.time()
+        # fps = 1/(cTime - pTime)
+        # pTime = cTime
 
-        # FPSを表示させる
-        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
-                    (0, 0, 0), 3)
+        # # FPSを表示させる
+        # cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
+        #             (0, 0, 0), 3)
 
 
         cv2.imshow("Image", img)
